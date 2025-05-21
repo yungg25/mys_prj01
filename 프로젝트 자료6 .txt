@@ -1,0 +1,34 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Updated data for the years 2012 to 2023
+data = {
+    '2012년': 9129966,
+    '2013년': 10014960,
+    '2014년': 11726480,
+    '2015년': 10969680,
+    '2016년': 14346080,
+    '2017년': 11140680,
+    '2018년': 12855840,
+    '2019년': 14737740,
+    '2020년': 21758710,
+    '2021년': 86144.58,
+    '2022년': 9500000,  # Example data for 2022
+    '2023년': 10000000  # Example data for 2023
+}
+
+df_mean = pd.DataFrame(list(data.items()), columns=['년도', '평균 유학 인구'])
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(df_mean['년도'], df_mean['평균 유학 인구'], label='평균 유학 인구', marker='o', color='b')
+
+plt.title('연도별 평균 유학 인구', fontsize=14)
+plt.xlabel('년도', fontsize=12)
+plt.ylabel('평균 유학 인구', fontsize=12)
+plt.xticks(rotation=45)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+plt.rc("font", family="Malgun Gothic")
